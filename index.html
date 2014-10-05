@@ -1,0 +1,50 @@
+<html>
+
+<head>
+    <title>Github Search</title>
+    <link rel="stylesheet" href="lib/css/bootstrap.css">
+</head>
+
+<body>
+<div class="container">
+    <h1>Github Search</h1>
+
+    <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Search" id="search-field">
+        </div>
+        <button type="button" class="btn btn-default" onclick="githubSearch()">Search</button>
+    </form>
+
+    <div id="repo_table" class="panel panel_default">
+        <table class="table">
+            <thead>
+            <tr>
+                <th data-field="name">Name</th>
+                <th data-field="owner">Owner</th>
+                <th data-field="url">Url</th>
+                <th data-field="description">Description</th>
+                <th data-field="language">Language</th>
+                <th data-field="updated">Updated at</th>
+            </tr>
+            </thead>
+            <tbody>
+            {{#repo}}
+            <tr>
+                <td>{{name}}</td>
+                <td>{{owner}}</td>
+                <td>{{url}}</td>
+                <td>{{description}}</td>
+                <td>{{language}}</td>
+                <td>{{updated}}</td>
+            </tr>
+            {{/repo}}
+            </tbody>
+        </table>
+    </div>
+</div>
+<script src="lib/js/jquery-2.1.1.min.js"></script>
+<script src="functions.js"></script>
+</body>
+
+</html>

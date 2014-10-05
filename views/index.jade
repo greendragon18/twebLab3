@@ -1,10 +1,33 @@
 extends layout
 
 block content
-
     .container
       h1 Github Search
       form.navbar-form.navbar-left(role='search')
         .form-group
           input#search-field.form-control(type='text', placeholder='Search')
         button.btn.btn-default(type='button', onclick='githubSearch()') Search
+      #repo_table.panel.panel_default
+        table.table
+          thead
+            tr
+              th(data-field='name') Name
+              th(data-field='owner') Owner
+              th(data-field='url') Url
+              th(data-field='description') Description
+              th(data-field='language') Language
+              th(data-field='updated') Updated at
+          tbody
+            | {{#repo}}
+            tr
+              td {{name}}
+              td {{owner}}
+              td {{url}}
+              td {{description}}
+              td {{language}}
+              td {{updated}}
+            | {{/repo}}
+    script(src='/javascripts/jquery-2.1.1.min.js')
+    script(src='/javascripts/handlebars-v2.0.0.js')
+    script(src='/javascripts/functions.js')
+
