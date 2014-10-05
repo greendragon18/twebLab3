@@ -16,7 +16,7 @@
         <button type="button" class="btn btn-default" onclick="githubSearch()">Search</button>
     </form>
 
-    <div id="repo_table" class="panel panel_default">
+    <div class="panel panel_default">
         <table class="table">
             <thead>
             <tr>
@@ -28,8 +28,7 @@
                 <th data-field="updated">Updated at</th>
             </tr>
             </thead>
-            <tbody>
-            {{#repo}}
+            <tbody id="repo_table">
             <tr>
                 <td>{{name}}</td>
                 <td>{{owner}}</td>
@@ -38,7 +37,6 @@
                 <td>{{language}}</td>
                 <td>{{updated}}</td>
             </tr>
-            {{/repo}}
             </tbody>
         </table>
     </div>

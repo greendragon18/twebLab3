@@ -7,7 +7,7 @@ block content
         .form-group
           input#search-field.form-control(type='text', placeholder='Search')
         button.btn.btn-default(type='button', onclick='githubSearch()') Search
-      #repo_table.panel.panel_default
+      .panel.panel_default
         table.table
           thead
             tr
@@ -17,8 +17,7 @@ block content
               th(data-field='description') Description
               th(data-field='language') Language
               th(data-field='updated') Updated at
-          tbody
-            | {{#repo}}
+          tbody#repo_table
             tr
               td {{name}}
               td {{owner}}
@@ -26,8 +25,8 @@ block content
               td {{description}}
               td {{language}}
               td {{updated}}
-            | {{/repo}}
     script(src='/javascripts/jquery-2.1.1.min.js')
     script(src='/javascripts/handlebars-v2.0.0.js')
     script(src='/javascripts/functions.js')
+    
 
