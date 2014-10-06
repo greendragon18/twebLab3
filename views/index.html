@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head><title>Github Search 2</title>
+    <link rel="stylesheet" href="stylesheets/bootstrap.css">
+    <link rel="stylesheet" href="stylesheets/bootstrap-table.css">
+</head>
+<body>
+<div class="container"><h1>Github Search</h1>
+
+    <form role="search" class="navbar-form navbar-left">
+        <div class="form-group"><input id="search-field" type="text" placeholder="Search" class="form-control"></div>
+        <button type="button" onclick="githubSearch()" class="btn btn-default">Search</button>
+    </form>
+    <div class="panel panel_default">
+        <table class="table">
+            <thead>
+            <tr>
+                <th data-field="name">Name</th>
+                <th data-field="owner">Owner</th>
+                <th data-field="url">Url</th>
+                <th data-field="description">Description</th>
+                <th data-field="language">Language</th>
+                <th data-field="updated">Updated at</th>
+            </tr>
+            </thead>
+            <tbody id="repo_table"></tbody>
+        </table>
+    </div>
+</div>
+<script src="/javascripts/jquery-2.1.1.min.js"></script>
+<script src="/javascripts/handlebars-v2.0.0.js"></script>
+<script src="/javascripts/functions.js"></script>
+</body>
+</html>
