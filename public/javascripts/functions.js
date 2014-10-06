@@ -9,7 +9,7 @@ function githubSearch() {
     var textField = document.getElementById('search-field').value;
 
     console.log(navigator.userAgent);
-    $.getJSON("http://localhost:3000/github?search=" + textField, function (data, textStatus, jqXHR) {
+    $.getJSON("/github?search=" + textField, function (data, textStatus, jqXHR) {
         console.log(data);
 
         var repos = JSON.parse(data);
