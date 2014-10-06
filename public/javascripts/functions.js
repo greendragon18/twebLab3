@@ -6,9 +6,9 @@ function success(data, textStatus, jqXHR) {
 }
 
 function githubSearch() {
+    $("#repos_div").show();
     var textField = document.getElementById('search-field').value;
 
-    console.log(navigator.userAgent);
     $.getJSON("/github?search=" + textField, function (data, textStatus, jqXHR) {
         console.log(data);
 
@@ -24,10 +24,6 @@ function githubSearch() {
             "<td>{{updated}}</td>" +
             "</tr>";
         var template = Handlebars.compile(source);
-        //var repo = {repo: [data]};
-        //var repo = {"name": "tutu", "owner": "tata", "url": "lala", "description": "titi", "language": "toto", "updated": "lili"};
-        //var repo = {repo: [0]};
-        //console.log(repo);
         repos.forEach(function(repo){
             $("#repo_table").append(template(repo));
         });
@@ -35,9 +31,8 @@ function githubSearch() {
 
 }
 
-// Shorthand for $( document ).ready()
 $(function () {
     console.log("jquery is ready!");
     $("#repo_table").slideToggle;
-    //$("#mondiv").hide();
+    $("#repos_div").hide();
 });
